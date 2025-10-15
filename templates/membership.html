@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">Join Us</h1>
+            
+            <!-- Membership Benefits -->
+            <div class="card shadow mb-5">
+                <div class="card-body p-4">
+                    <h3 class="text-primary mb-4">Benefits of Being a Member</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-vote-yea text-success me-2"></i> Right to vote and run for leadership positions</li>
+                                <li class="mb-3"><i class="fas fa-users text-success me-2"></i> Full participation in meetings and activities</li>
+                                <li class="mb-3"><i class="fas fa-graduation-cap text-success me-2"></i> Training and skill development opportunities</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-hand-holding-heart text-success me-2"></i> Priority access to organizational services</li>
+                                <li class="mb-3"><i class="fas fa-network-wired text-success me-2"></i> Network of like-minded individuals</li>
+                                <li class="mb-3"><i class="fas fa-chart-line text-success me-2"></i> Economic empowerment opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Membership Requirements -->
+            <div class="card shadow mb-5">
+                <div class="card-body p-4">
+                    <h3 class="text-primary mb-4">Membership Requirements</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Must be 18 years or older</li>
+                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Accept and follow the organization's constitution</li>
+                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Complete the registration form in full</li>
+                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Pay membership fees</li>
+                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Fully participate in organizational activities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Membership Form -->
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h3 class="text-primary mb-4">Registration Form</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="member_type" class="form-label">Membership Type</label>
+                                <select class="form-select" id="member_type" name="member_type" required>
+                                    <option value="">Select membership type</option>
+                                    <option value="ordinary">Ordinary Member</option>
+                                    <option value="coopted">Co-opted Member</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agree_terms" required>
+                            <label class="form-check-label" for="agree_terms">
+                                I agree to all terms of the TAWHO constitution
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

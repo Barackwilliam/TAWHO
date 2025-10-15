@@ -1,0 +1,42 @@
+/* Additional custom styles */
+.hero-buttons .btn {
+    margin: 5px;
+}
+
+.program-card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.member-type {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.impact-item {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+}
+
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}

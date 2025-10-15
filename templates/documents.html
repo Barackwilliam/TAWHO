@@ -1,0 +1,493 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Page Header -->
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold text-primary mb-3">Documents and Resources</h1>
+            <p class="lead">Our legal papers, financial reports, and important organizational documents</p>
+        </div>
+    </div>
+
+    <!-- Documents Navigation -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Document Types</h5>
+                    <div class="row g-3" id="documentFilters">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary active filter-btn" data-category="all">
+                                All Documents
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary filter-btn" data-category="constitution">
+                                <i class="fas fa-file-contract me-2"></i>Constitution
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary filter-btn" data-category="certificate">
+                                <i class="fas fa-certificate me-2"></i>Our Certificates
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary filter-btn" data-category="report">
+                                <i class="fas fa-chart-bar me-2"></i>Annual Reports
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary filter-btn" data-category="financial">
+                                <i class="fas fa-file-invoice-dollar me-2"></i>Financial Statements
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary filter-btn" data-category="policy">
+                                <i class="fas fa-shield-alt me-2"></i>Organizational Policies
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Important Documents Alert -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="alert alert-info border-0 shadow-sm">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-info-circle fa-2x me-3"></i>
+                    <div>
+                        <h6 class="alert-heading mb-1">Important Legal Documents</h6>
+                        <p class="mb-0">Our organization is legally registered under the Non-Governmental Organizations Act, 2002 with registration number OONGO/R/7662</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documents Grid -->
+    <div class="row g-4" id="documentsGrid">
+        <!-- Documents will be loaded dynamically via JavaScript -->
+        <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading documents...</p>
+        </div>
+    </div>
+
+    <!-- Legal Compliance Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-body py-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4 class="mb-2">Legal Compliance and Transparency</h4>
+                            <p class="mb-0">We take pride in adhering to all legal requirements and ensuring full transparency in all our operations</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <div class="compliance-badges">
+                                <span class="badge bg-light text-primary me-2 mb-2">Registration Number: OONGO/R/7662</span>
+                                <span class="badge bg-light text-primary me-2 mb-2">Registration Date: 30/12/2024</span>
+                                <span class="badge bg-light text-primary mb-2">Year Established: 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Categories Explanation -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="text-center mb-4">Our Document Types</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
+                            <h5>Organization Constitution</h5>
+                            <p class="text-muted">The fundamental laws and rules of the organization approved by government authorities</p>
+                            <ul class="list-unstyled small text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Purpose and Objectives</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Leadership Structure</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Member Policies</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Financial Guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                            <h5>Performance Reports</h5>
+                            <p class="text-muted">Annual reports on activities, achievements, and organizational challenges</p>
+                            <ul class="list-unstyled small text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Annual Reports</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Project Analysis</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Achievement Reports</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Future Plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                            <h5>Certificates and Policies</h5>
+                            <p class="text-muted">Legal documents, registration certificates, and internal organizational policies</p>
+                            <ul class="list-unstyled small text-start">
+                                <li><i class="fas fa-check text-success me-2"></i>Registration Certificates</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Employee Policies</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Contracts with Partners</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Legal Documents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Documents Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="card-body py-5 text-white text-center">
+                    <h3 class="mb-3">Can't Find the Document You Are Looking For?</h3>
+                    <p class="lead mb-4">Contact us for additional documents or any questions about our documents</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                        <a href="{% url 'contact' %}" class="btn btn-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Request Document
+                        </a>
+                        <a href="tel:+255123456789" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Document Preview Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" aria-labelledby="documentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="documentModalLabel">View Document</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="documentModalBody">
+                <!-- Document details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="downloadDocumentBtn">
+                    <i class="fas fa-download me-2"></i>Download Document
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.document-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.document-icon {
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.document-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.document-type-constitution { border-left: 4px solid #28a745; }
+.document-type-certificate { border-left: 4px solid #dc3545; }
+.document-type-report { border-left: 4px solid #ffc107; }
+.document-type-financial { border-left: 4px solid #17a2b8; }
+.document-type-policy { border-left: 4px solid #6f42c1; }
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.file-size {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.download-btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.compliance-badges .badge {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Document categories data
+const documentCategories = {
+    'constitution': {
+        name: 'Constitution',
+        icon: 'fa-file-contract',
+        color: 'success',
+        description: 'Fundamental legal documents of the organization'
+    },
+    'certificate': {
+        name: 'Our Certificates',
+        icon: 'fa-certificate',
+        color: 'danger',
+        description: 'Official registration certificates of the organization'
+    },
+    'report': {
+        name: 'Annual Reports',
+        icon: 'fa-chart-bar',
+        color: 'warning',
+        description: 'Performance and achievement reports of each year'
+    },
+    'financial': {
+        name: 'Financial Statements',
+        icon: 'fa-file-invoice-dollar',
+        color: 'info',
+        description: 'Financial reports and audits'
+    },
+    'policy': {
+        name: 'Organizational Policies',
+        icon: 'fa-shield-alt',
+        color: 'primary',
+        description: 'Internal policies and operational guidelines'
+    }
+};
+
+// Sample documents data (in real app, this would come from Django backend)
+const sampleDocuments = [
+    {
+        id: 1,
+        title: 'Constitution of Tanzania Women Hope Organization',
+        description: 'Full constitution of the organization approved by government authorities. Includes purpose, objectives, leadership structure, and all fundamental rules.',
+        document_type: 'constitution',
+        file_size: '32.5 KB',
+        upload_date: '2025-10-10',
+        file_url: '{% static 'doc/constitution.docx' %}',
+        is_public: true
+    },
+    {
+        id: 2,
+        title: 'Registration Certificate - OONGO/R/7662',
+        description: 'Official registration certificate of the organization under the Non-Governmental Organizations Act, 2002.',
+        document_type: 'certificate',
+        file_size: '981 KB',
+        upload_date: '2025-10-10',
+        file_url: '{% static 'doc/certificate.pdf' %}',
+        is_public: true
+    },
+    {
+        id: 3,
+        title: 'Annual Report 2023',
+        description: 'Complete report of activities and achievements of the organization for 2023. Includes projects, outcomes, and future plans.',
+        document_type: 'report',
+        file_size: '3.2 MB',
+        upload_date: '2024-03-01',
+        file_url: '/documents/annual_report_2023.pdf',
+        is_public: true
+    },
+    {
+        id: 4,
+        title: 'Financial Statements 2023',
+        description: 'Financial report audited by independent auditors for 2023.',
+        document_type: 'financial',
+        file_size: '2.1 MB',
+        upload_date: '2024-02-20',
+        file_url: '/documents/financial_2023.pdf',
+        is_public: true
+    },
+    {
+        id: 5,
+        title: 'Employee Policy',
+        description: 'Employment policies, salaries, and employee rights of the organization.',
+        document_type: 'policy',
+        file_size: '1.5 MB',
+        upload_date: '2024-01-25',
+        file_url: '/documents/hr_policy.pdf',
+        is_public: true
+    },
+    {
+        id: 6,
+        title: 'Membership Agreement',
+        description: 'Agreement to join the organization as a member and its terms.',
+        document_type: 'policy',
+        file_size: '1.2 MB',
+        upload_date: '2024-02-10',
+        file_url: '/documents/membership_agreement.pdf',
+        is_public: true
+    }
+];
+
+// Load documents
+function loadDocuments() {
+    try {
+        const publicDocuments = sampleDocuments.filter(doc => doc.is_public);
+        displayDocuments(publicDocuments);
+    } catch (error) {
+        console.error('Error loading documents:', error);
+        document.getElementById('documentsGrid').innerHTML = `
+            <div class="col-12 text-center">
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Error loading documents. Please try again later.
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Display documents in grid
+function displayDocuments(documents, filterCategory = 'all') {
+    const grid = document.getElementById('documentsGrid');
+    
+    if (documents.length === 0) {
+        grid.innerHTML = `
+            <div class="col-12 text-center">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    No documents are currently available.
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    let filteredDocuments = documents;
+    if (filterCategory !== 'all') {
+        filteredDocuments = documents.filter(doc => doc.document_type === filterCategory);
+    }
+
+    grid.innerHTML = '';
+
+    filteredDocuments.forEach(document => {
+        const category = documentCategories[document.document_type];
+        const uploadDate = new Date(document.upload_date).toLocaleDateString('en-GB');
+        
+        const documentHTML = `
+            <div class="col-lg-4 col-md-6 mb-4 document-item" data-category="${document.document_type}">
+                <div class="card document-card h-100 shadow-sm document-type-${document.document_type}">
+                    <div class="document-icon">
+                        <i class="fas ${category.icon}"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-${category.color}">${category.name}</span>
+                            <small class="file-size">${document.file_size}</small>
+                        </div>
+                        <h5 class="card-title">${document.title}</h5>
+                        <p class="card-text">${document.description}</p>
+                        <div class="document-meta">
+                            <small class="text-muted">
+                                <i class="fas fa-calendar me-1"></i>
+                                Uploaded: ${uploadDate}
+                            </small>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary btn-sm view-document-btn" 
+                                    data-document-id="${document.id}">
+                                <i class="fas fa-eye me-2"></i>View
+                            </button>
+                            <a href="${document.file_url}" class="btn btn-primary btn-sm download-btn" download>
+                                <i class="fas fa-download me-2"></i>Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        grid.innerHTML += documentHTML;
+    });
+
+    // Add event listeners to view buttons
+    document.querySelectorAll('.view-document-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const docId = this.dataset.documentId;
+            const document = sampleDocuments.find(doc => doc.id == docId);
+            if (document) {
+                showDocumentModal(document);
+            }
+        });
+    });
+}
+
+// Show document in modal
+function showDocumentModal(document) {
+    const modalTitle = document.getElementById('documentModalLabel');
+    const modalBody = document.getElementById('documentModalBody');
+    const downloadBtn = document.getElementById('downloadDocumentBtn');
+
+    modalTitle.textContent = document.title;
+    modalBody.innerHTML = `
+        <p>${document.description}</p>
+        <p><strong>File size:</strong> ${document.file_size}</p>
+        <p><strong>Uploaded:</strong> ${new Date(document.upload_date).toLocaleDateString('en-GB')}</p>
+    `;
+    downloadBtn.setAttribute('onclick', `window.open('${document.file_url}', '_blank')`);
+    const modal = new bootstrap.Modal(document.getElementById('documentModal'));
+    modal.show();
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        const category = this.dataset.category;
+        displayDocuments(sampleDocuments, category);
+    });
+});
+
+// Initial load
+document.addEventListener('DOMContentLoaded', loadDocuments);
+</script>
+{% endblock %}

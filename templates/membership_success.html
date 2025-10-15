@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <!-- Success Card -->
+            <div class="card shadow border-0 text-center">
+                <div class="card-body py-5">
+                    <!-- Success Icon -->
+                    <div class="success-icon mb-4">
+                        <div class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center" 
+                             style="width: 80px; height: 80px;">
+                            <i class="fas fa-check fa-2x text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <h2 class="text-success mb-3">You Have Successfully Joined!</h2>
+                    <p class="lead mb-4">
+                        Thank you for joining the Tanzania Women Hope Organization. Your application has been fully received.
+                    </p>
+                    
+                    <!-- Next Steps -->
+                    <div class="next-steps mb-4">
+                        <h5 class="text-primary mb-3">Next Steps</h5>
+                        <div class="row text-start">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-envelope text-primary me-3"></i>
+                                    <span>You will receive a confirmation email within 24 hours</span>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-phone text-primary me-3"></i>
+                                    <span>Our team will contact you with further details</span>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users text-primary me-3"></i>
+                                    <span>You will be welcomed to our member meetings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Membership Details -->
+                    <div class="membership-details bg-light p-4 rounded mb-4">
+                        <h6 class="text-primary mb-3">Your Membership Page</h6>
+                        <p class="small mb-2">
+                            As a TAWHO member, you have the right to fully participate in all organizational activities, 
+                            vote, and run for leadership positions.
+                        </p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <a href="{% url 'homepage' %}" class="btn btn-outline-primary w-100">
+                                    <i class="fas fa-home me-2"></i> Back to Home
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{% url 'programs' %}" class="btn btn-primary w-100">
+                                    <i class="fas fa-project-diagram me-2"></i> View Programs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Information -->
+            <div class="card mt-4 border-0 shadow">
+                <div class="card-body">
+                    <h5 class="text-primary mb-3">Additional Information About Membership</h5>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-shield-alt text-success me-2 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Member Rights</h6>
+                                    <p class="small mb-0">Vote, be elected, and participate in decision-making</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-hand-holding-heart text-success me-2 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Responsibilities</h6>
+                                    <p class="small mb-0">Participate in activities and pay membership fees</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-calendar-check text-success me-2 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Meetings</h6>
+                                    <p class="small mb-0">Attend annual and emergency meetings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-graduation-cap text-success me-2 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Training</h6>
+                                    <p class="small mb-0">Opportunities for training and skill development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Support -->
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    Have questions? Contact us: 
+                    <a href="mailto:membership@tawho.org" class="text-primary">membership@tawho.co.tz</a>
+                    or 
+                    <a href="tel:+255123456789" class="text-primary">+255789630665</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.success-icon {
+    animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.next-steps .d-flex {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.next-steps .d-flex:last-child {
+    border-bottom: none;
+}
+
+.membership-details {
+    border-left: 4px solid var(--primary-color);
+}
+
+.action-buttons .btn {
+    padding: 12px 20px;
+    font-weight: 500;
+}
+</style>
+{% endblock %}

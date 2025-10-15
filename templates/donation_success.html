@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Success Card -->
+            <div class="card shadow border-0 text-center">
+                <div class="card-body py-5">
+                    <!-- Success Icon -->
+                    <div class="success-icon mb-4">
+                        <div class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center" 
+                             style="width: 120px; height: 120px;">
+                            <i class="fas fa-heart fa-3x text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <h1 class="text-success mb-3">Thank You So Much for Your Donation!</h1>
+                    <p class="lead mb-4">
+                        Your contribution will help change the lives of many women and children in Tanzania. We appreciate your cooperation and trust.
+                    </p>
+
+                    <!-- Impact Message -->
+                    <div class="impact-message bg-light p-4 rounded mb-4">
+                        <h4 class="text-primary mb-3">Your Donation Creates Real Change</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-graduation-cap fa-2x text-primary mb-2"></i>
+                                    <h6>Education and Training</h6>
+                                    <small class="text-muted">Providing women with life skills</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-stethoscope fa-2x text-primary mb-2"></i>
+                                    <h6>Health Services</h6>
+                                    <small class="text-muted">Medical care and reproductive health support</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-hand-holding-usd fa-2x text-primary mb-2"></i>
+                                    <h6>Economic Empowerment</h6>
+                                    <small class="text-muted">Self-sustaining and business projects</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Details -->
+                    <div class="donation-details mb-4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-primary">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0"><i class="fas fa-receipt me-2"></i>Your Donation Details</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row text-start">
+                                            <div class="col-6 mb-2">
+                                                <strong>Confirmation Number:</strong>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                                <span class="text-primary">TAWHO-{{ "now"|date:"Ymd-His" }}</span>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                                <strong>Donation Date:</strong>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                                {{ "now"|date:"d/m/Y" }}
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                                <strong>Donation Status:</strong>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                                <span class="badge bg-success">Confirmed</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <strong>Processing Time:</strong>
+                                            </div>
+                                            <div class="col-6">
+                                                24 - 48 Hours
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="next-steps mb-4">
+                        <h5 class="text-primary mb-3">What Happens After Your Donation</h5>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="step-card text-center p-3">
+                                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3" 
+                                         style="width: 50px; height: 50px; line-height: 50px;">1</div>
+                                    <h6>Donation Confirmation</h6>
+                                    <small class="text-muted">You’ll receive a confirmation email</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="step-card text-center p-3">
+                                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3" 
+                                         style="width: 50px; height: 50px; line-height: 50px;">2</div>
+                                    <h6>Usage Report</h6>
+                                    <small class="text-muted">We’ll provide a report on how your donation is used</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="step-card text-center p-3">
+                                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3" 
+                                         style="width: 50px; height: 50px; line-height: 50px;">3</div>
+                                    <h6>Results and Impact</h6>
+                                    <small class="text-muted">You’ll learn how your donation made a difference</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="step-card text-center p-3">
+                                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3" 
+                                         style="width: 50px; height: 50px; line-height: 50px;">4</div>
+                                    <h6>Continuous Support</h6>
+                                    <small class="text-muted">We’ll stay connected and keep you updated</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Deduction Info -->
+                    <div class="tax-info alert alert-info mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-file-invoice-dollar fa-2x me-3"></i>
+                            <div class="text-start">
+                                <h6 class="alert-heading mb-1">Tax Deduction</h6>
+                                <p class="mb-0">All donations to TAWHO are eligible for tax deductions. We’ll send you an official donation receipt for tax purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons mb-4">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <a href="{% url 'homepage' %}" class="btn btn-outline-primary w-100 py-3">
+                                    <i class="fas fa-home me-2"></i> Return Home
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{% url 'programs' %}" class="btn btn-outline-primary w-100 py-3">
+                                    <i class="fas fa-project-diagram me-2"></i> View Programs
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{% url 'donation' %}" class="btn btn-primary w-100 py-3">
+                                    <i class="fas fa-donate me-2"></i> Make Another Donation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Share Options -->
+                    <div class="share-options">
+                        <h6 class="text-muted mb-3">Share this opportunity with others:</h6>
+                        <div class="d-flex justify-content-center flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-facebook-f me-2"></i>Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline-info btn-sm">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="fab fa-instagram me-2"></i>Instagram
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-envelope me-2"></i>Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-question-circle fa-2x text-primary mb-3"></i>
+                            <h5>Frequently Asked Questions</h5>
+                            <p class="small text-muted">Have questions about your donation? We’ve prepared answers to the most commonly asked ones.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Read FAQ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-download fa-2x text-primary mb-3"></i>
+                            <h5>Confirmation Documents</h5>
+                            <p class="small text-muted">Download your donation confirmation receipt for your records or tax payments.</p>
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-download me-2"></i>Download Receipt
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="text-center mt-4">
+                <div class="alert alert-light border">
+                    <h6 class="text-primary mb-2">Need More Help?</h6>
+                    <p class="mb-2">Contact our Donor Support Team:</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <span><i class="fas fa-phone text-success me-2"></i><a href="tel:+255123456789" class="text-decoration-none">+255 123 456 789</a></span>
+                        <span><i class="fas fa-envelope text-primary me-2"></i><a href="mailto:donations@tawho.org" class="text-decoration-none">donations@tawho.org</a></span>
+                        <span><i class="fas fa-clock text-warning me-2"></i>8:00 AM - 5:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.success-icon {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.impact-message {
+    border-left: 4px solid var(--primary-color);
+}
+
+.step-card {
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.tax-info {
+    border-left: 4px solid #17a2b8;
+}
+
+.action-buttons .btn {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+.share-options .btn {
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+.donation-details .card {
+    border: 2px solid var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .success-icon div {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .success-icon i {
+        font-size: 2rem !important;
+    }
+    
+    .step-card {
+        margin-bottom: 15px;
+    }
+    
+    .action-buttons .col-md-4 {
+        margin-bottom: 10px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .action-buttons,
+    .share-options {
+        display: none;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+</style>
+{% endblock %}

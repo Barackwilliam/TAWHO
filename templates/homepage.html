@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <div class="hero-overlay"></div>
+            <img src="https://www.aidshealth.org/wp-content/uploads/2023/01/52566091478_3f3b2284cb_h.jpg" alt="Empowerment Image 1">
+        </div>
+        <div class="slide fade">
+            <div class="hero-overlay"></div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP1N2INP7K3DFhZRcvHdYm_ppmwaAfwDtNuA&s" alt="Empowerment Image 2">
+        </div>
+        <div class="slide fade">
+            <div class="hero-overlay"></div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZeCyv-r1JBeN6Y1lrNnCb6jfiE2PbLgFZTw&s" alt="Empowerment Image 3">
+        </div>
+    </div>
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">
+            Women with Hope are Pillars of Society Development
+        </h1>
+        <p class="lead mb-4 animate__animated animate__fadeInUp">
+            We are committed to giving hope and power to Tanzanian women through education, health, and economic empowerment.
+        </p>
+        <a href="{% url 'programs' %}" class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite">Discover Our Impact</a>
+    </div>
+</section>
+
+<style>
+.hero-section {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    text-transform: capitalize;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: #ff6f61;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<script>
+// Slideshow JavaScript
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+
+
+
+<!-- Quick Stats -->
+<section class="py-5 stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <h3 class="text-primary fw-bold" id="membersCount">0</h3>
+                <p>Registered Members</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary fw-bold" id="programsCount">0</h3>
+                <p>Ongoing Projects</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary fw-bold">2019</h3>
+                <p>Year of Establishment</p>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-primary fw-bold">OONGO/R/7662</h3>
+                <p>Registration Number</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Summary -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">About Tanzania Women Hope Organization</h2>
+                <p class="mb-4">TAWHO is a non-governmental organization focused on empowering women and children through various social, economic, and health services.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Non-political</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Non-religious</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Non-tribal</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Non-profit</li>
+                </ul>
+                <a href="{% url 'about' %}" class="btn btn-primary">Read More</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://www.aidshealth.org/wp-content/uploads/2023/01/52566091478_3f3b2284cb_h.jpg" alt="TAWHO Team" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2>Our Programs and Services</h2>
+            <p class="lead">We provide various services targeting women and children</p>
+        </div>
+        <div class="row" id="programsContainer">
+            <!-- Programs will be loaded via JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 text-white" style="background: linear-gradient(135deg, var(--accent-color), var(--primary-color));">
+    <div class="container text-center">
+        <h2 class="mb-4">Would You Like to Help Change Lives?</h2>
+        <p class="lead mb-4">Join us today as a member, donor, or volunteer</p>
+        <div class="cta-buttons">
+            <a href="{% url 'membership' %}" class="btn btn-light btn-lg me-3">Join Now</a>
+            <a href="{% url 'donation' %}" class="btn btn-outline-light btn-lg">Sponsor a Project</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Animated counter
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 100;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 20);
+}
+
+// Load programs via API
+async function loadPrograms() {
+    try {
+        const response = await fetch('/api/programs/');
+        const programs = await response.json();
+        const container = document.getElementById('programsContainer');
+        
+        programs.slice(0, 3).forEach(program => {
+            const programHTML = `
+                <div class="col-md-4 mb-4">
+                    <div class="card program-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">${program.title}</h5>
+                            <p class="card-text">${program.description.substring(0, 150)}...</p>
+                            <span class="badge bg-primary">${program.category}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += programHTML;
+        });
+        
+        // Update programs count
+        document.getElementById('programsCount').textContent = programs.length;
+    } catch (error) {
+        console.error('Error loading programs:', error);
+    }
+}
+
+// Load member stats
+async function loadMemberStats() {
+    try {
+        const response = await fetch('/api/member-stats/');
+        const stats = await response.json();
+        animateCounter(document.getElementById('membersCount'), stats.total_members);
+    } catch (error) {
+        console.error('Error loading member stats:', error);
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadPrograms();
+    loadMemberStats();
+});
+</script>
+{% endblock %}

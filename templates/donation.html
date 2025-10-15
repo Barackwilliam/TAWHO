@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-5 display-4 fw-bold" style="color: var(--primary-color); text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Make a Donation</h1>
+            
+            <!-- Donation Impact -->
+            <div class="card shadow-lg mb-5 border-0 rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #ffffff, #f8f9fa);">
+                <div class="card-body p-5 text-center">
+                    <h3 class="mb-4 fw-bold" style="color: var(--secondary-color);">Your Donation Makes a Difference</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <div class="impact-item p-4 rounded-3 shadow-sm h-100" style="background: white; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <i class="fas fa-graduation-cap fa-3x mb-3" style="color: var(--primary-color);"></i>
+                                <h5 class="fw-semibold">Education</h5>
+                                <p>Empowering women with life skills and knowledge</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="impact-item p-4 rounded-3 shadow-sm h-100" style="background: white; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <i class="fas fa-stethoscope fa-3x mb-3" style="color: var(--accent-color);"></i>
+                                <h5 class="fw-semibold">Health</h5>
+                                <p>Providing reproductive health and HIV/AIDS services</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="impact-item p-4 rounded-3 shadow-sm h-100" style="background: white; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <i class="fas fa-hand-holding-usd fa-3x mb-3" style="color: var(--secondary-color);"></i>
+                                <h5 class="fw-semibold">Economy</h5>
+                                <p>Projects to reduce poverty and promote self-reliance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Form -->
+            <div class="card shadow-lg mb-5 border-0 rounded-4 overflow-hidden">
+                <div class="card-body p-5" style="background: var(--gradient-bg); color: white;">
+                    <h3 class="mb-4 fw-bold text-white text-center">Donation Form</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="donor_name" class="form-label fw-medium">Donor Name</label>
+                                <input type="text" class="form-control rounded-pill" id="donor_name" name="donor_name" required style="border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="donor_email" class="form-label fw-medium">Email Address</label>
+                                <input type="email" class="form-control rounded-pill" id="donor_email" name="donor_email" required style="border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="donation_type" class="form-label fw-medium">Donation Type</label>
+                            <select class="form-select rounded-pill" id="donation_type" name="donation_type" required style="border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                                <option value="">Select donation type</option>
+                                <option value="money">Monetary Donation</option>
+                                <option value="equipment">Equipment and Materials</option>
+                                <option value="time">Volunteer Time</option>
+                                <option value="expertise">Expertise</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3" id="amountField">
+                            <label for="amount" class="form-label fw-medium">Amount (TZS)</label>
+                            <input type="number" class="form-control rounded-pill" id="amount" name="amount" step="0.01" min="0" style="border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-medium">Donation Description</label>
+                            <textarea class="form-control rounded-3" id="description" name="description" rows="4" required style="border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-light btn-lg w-100 rounded-pill fw-bold" style="background: white; color: var(--primary-color); transition: transform 0.3s ease, box-shadow 0.3s ease;">Submit Donation</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Other Ways to Support -->
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="card-body p-5">
+                    <h4 class="mb-4 fw-bold text-center" style="color: var(--primary-color);">Other Ways to Support Us</h4>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 mb-4">
+                            <div class="support-item d-flex align-items-start p-3 rounded-3 shadow-sm" style="background: var(--light-color); transition: transform 0.3s ease;">
+                                <i class="fas fa-hands-helping fa-2x me-3" style="color: var(--primary-color);"></i>
+                                <div>
+                                    <h6 class="fw-semibold">Volunteer</h6>
+                                    <p>Donate your time and skills to support our projects</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="support-item d-flex align-items-start p-3 rounded-3 shadow-sm" style="background: var(--light-color); transition: transform 0.3s ease;">
+                                <i class="fas fa-bullhorn fa-2x me-3" style="color: var(--accent-color);"></i>
+                                <div>
+                                    <h6 class="fw-semibold">Spread the Word</h6>
+                                    <p>Share our work and partnership opportunities with others</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="support-item d-flex align-items-start p-3 rounded-3 shadow-sm" style="background: var(--light-color); transition: transform 0.3s ease;">
+                                <i class="fas fa-handshake fa-2x me-3" style="color: var(--secondary-color);"></i>
+                                <div>
+                                    <h6 class="fw-semibold">Partnerships</h6>
+                                    <p>Collaborate with us as an institution or company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="support-item d-flex align-items-start p-3 rounded-3 shadow-sm" style="background: var(--light-color); transition: transform 0.3s ease;">
+                                <i class="fas fa-gift fa-2x me-3" style="color: var(--primary-color);"></i>
+                                <div>
+                                    <h6 class="fw-semibold">In-Kind Donations</h6>
+                                    <p>Provide equipment, books, or working materials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('donation_type').addEventListener('change', function() {
+    const amountField = document.getElementById('amountField');
+    if (this.value === 'money') {
+        amountField.style.display = 'block';
+        document.getElementById('amount').required = true;
+    } else {
+        amountField.style.display = 'none';
+        document.getElementById('amount').required = false;
+    }
+});
+
+// Add hover effects
+document.querySelectorAll('.impact-item, .support-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+        item.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
+    });
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+    });
+});
+</script>
+{% endblock %}
