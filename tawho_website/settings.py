@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    "jazzmin",  # lazima iwe juu ya admin
+    # "jazzmin",  
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
