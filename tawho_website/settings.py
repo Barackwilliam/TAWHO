@@ -85,28 +85,21 @@ WSGI_APPLICATION = 'tawho_website.wsgi.application'
 #     }
 # }
 
+#Database hii nilifungua kupitia Email ya kilindo(Jafarikilindo788@gmail.com)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',  # database name
-        'USER': 'postgres.rxlbupzsfxjnoymmaqzl',  # database user
-        'PASSWORD': 'NyumbaChap',  # database password
-        'HOST': 'aws-1-us-east-1.pooler.supabase.com',  # database host
-        'PORT': '5432',  # default PostgreSQL por
+        'NAME': 'postgres', 
+        'USER': 'postgres.qcyyazosbftensualamm',  
+        'PASSWORD': 'NyumbaChap', 
+        'HOST': 'aws-1-us-east-2.pooler.supabase.com', 
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},  # hii inaruhusu SSL
+
+
     }
 }
 
-# username: system
-# pwd:TAWHO
-
-
-
-# user=postgres.rxlbupzsfxjnoymmaqzl 
-# password=[YOUR-PASSWORD] 
-# host=aws-1-us-east-1.pooler.supabase.com
-# port=5432
-# dbname=postgres
-# NyumbaChap
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
